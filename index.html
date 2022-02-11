@@ -1,40 +1,850 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>GIT</section>
+        <section>
+            <section>GIT?? REALLY?????</section>
+            <section>
+                <iframe width="720" height="545" src="https://www.youtube.com/embed/yKQ_sQKBASM"></iframe>
+            </section>
+        </section>
+        <section>
+            <section>intro:</section>
+            <section>veeeeeeeeeeeeeeeeery hands on approach <br>
+                <iframe src="https://giphy.com/embed/xTiTnp3zOLUGbBF4ME" width="456" height="480" frameBorder="0"
+                        class="giphy-embed" allowFullScreen></iframe>
+            </section>
+            <section>GIT can be either easy or hard</section>
+            <section><img height="650" src="https://imgs.xkcd.com/comics/git_2x.png"></section>
+            <section>ALL suggestions are appreciated since...</section>
+            <section>...first times can be tricky<br>
+                <iframe src="https://giphy.com/embed/nG3S7sTfifKYU" width="377" height="480" frameBorder="0"
+                        class="giphy-embed" allowFullScreen></iframe>
+                </p></section>
+        </section>
+        <section>
+            <section><p>ground rules as usual i.e.</p>
+                <ul>
+                    <li class="fragment">everyone already passed</li>
+                    <li class="fragment">... that's it</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <p>AGENDA:</p>
+            <p>(basically a HUGE WIP)</p>
+            <ul>
+                <li>what is GIT</li>
+                <li>installing git</li>
+                <li>getting code from remote source</li>
+                <li>working with it</li>
+            </ul>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section>
+            <section>
+                <p>Q: What is GIT?</p>
+                <div>A1: distributed version control system (VCS)</div>
+                <div>A2: a standard</div>
+            </section>
+            <section><p>is github a git?</p><div class="fragment">NO</div><div class="fragment">there are many gitflows / git servers available (gitlab, bitbucket)</div>
+                <div class="fragment">we can also have our own & local implementation of GIT server (gerrit, gitolite, gogs)</div></section>
+            <section data-background-color="rgb(170, 170, 255)">
+                local git connects to remote git server
+                <img alt='' src="http://jlord.us/git-it/assets/imgs/remotes.png">
+            </section>
+            <section>
+                <h5>installing:</h5>
+                <ul>
+                    <li>macOS:<pre><code>git</code></pre></li>
+                    <li>linux:<pre><code>sudo apt install git-all</code></pre> <small>(read: your favourite package manager)</small></li>
+                    <li>win:<pre><code>choco install git</code></pre> <small>(https://git-scm.com/download/win)</small></li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section><p>3 entry points</p>
+                <ul>
+                    <li>get existing remote repo</li>
+                    <li>create new repo locally</li>
+                    <li>create new repo on the remote</li>
+                </ul>
+            </section>
+            <section>
+                <p>getting the code from 'THE INTERNET'</p>
+                <pre><code>git clone [address]</code></pre>
+            </section>
+            <section>
+                <p>creating new repo locally </p>
+                <pre><code>git init</code></pre>
+                <div class="fragment"> if project was created using a framework, GIT project is already initialized (like in 99% of all cases)</div>
+            </section>
+            <section>
+                <p>creating new repo on remote means to click 'create new repo' on eg. github page and then 'following the rabbit'</p>
+                <img alt='' src="./img/init.png"/>
+            </section>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section data-background-color="rgb(150, 130, 205)">
+            <section><div>TASK:</div>
+                <div>create and empty repository with folder structure like:
+                <pre>[root dir]
+    assets
+    css
+      \--index.css
+    js
+      \--index.js
+    index.html
+                </pre></div>
+            </section>
+            <section>perform a git init
+                <div class="fragment">.git directory got created</div></section>
+        </section>
+
+        <section>
+            <p>states</p>
+            <img alt='' src="img/states.png"/>
+        </section>
+<section>
+        <section>
+            <pre><code>git status</code></pre>
+            <img alt='' src="img/status1.png"/>
+        </section>
+        <section>
+            <pre><code>git add index.html
+git status
+            </code></pre>
+            <img alt='' src="img/status2.png"/>
+        </section>
+        <section>
+            <pre><code>#[modify the file]
+git status</code></pre>
+            <img alt='' src="img/status3.png"/>
+        </section>
+        <section>
+            <pre><code>git add .
+git status</code></pre>
+            <img alt='' src="img/status4.png"/>
+        </section>
+
+</section>
+<section>
+    <section>
+        <h4>commit</h4> captures a snapshot of the project's currently staged changes.
+        <img alt='' src="img/commit1.png"/>
+    </section>
+    <section>
+commits history
+        <img alt='' src="img/commit2.png"/>
+    </section>
+    <section>
+        <code><pre>git commit</pre></code>
+        <img alt='' src="img/commit3.png"/>
+    </section>    <section>
+        <img alt='' src="img/commit4.png"/>
+    <pre><code>git config --global core.editor nano</code></pre>
+            <pre><code>git config --list</code></pre>
+
+    </section>
+    <section>
+        <pre><code>git log</code></pre>
+    <img alt='' src="img/log1.png">
+    </section>
+    </section>
+        <section>
+    <section>
+        <a target="_new" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"> adding SSH key to github </a>
+    </section>
+    <section>
+        aaaaand create a repo on hithub.com
+    </section>
+    <section>
+        <pre><code class="js">// for example:
+// git remote add origin git@github.com:jesiolowski-wsb/git_wsb.git
+git remote add origin [your path]
+git branch -M main // <-- optional (git branch --help)
+git push -u origin main </code></pre>
+        <div class="fragment">'-u origin master' means set UPSTREAM reflecting local 'main' on origin (remote)</div>
+    </section>
+    <section>
+        <h4>WSB quirks</h4>
+        <pre><code class="js">
+git config user.name "John Doe"
+git config user.email "john@doe.org"      
+// vs
+git config --global user.name "John Doe"
+git config --global user.email "john@doe.org"      
+        </code></pre>
+    </section>
+</section>
+        <section data-background-color="rgb(150, 130, 205)">    
+            <section>
+                TASK: create another commit and push it to remote
+            </section>
+            <section>
+        <pre><code>git add .
+git commit
+git push
+        </code></pre>
+            </section>
+            <section>
+                and another one, but this time making a shortcut
+        <pre><code class="js">// commits all staged files
+git commit -am "commit message"
+git push
+        </code></pre>
+            </section>
+        </section>
+
+        <section data-background-color="rgb(250, 230, 205)">
+            <section><h3>recap:</h3></section>
+            <section><pre><code>git init</code></pre>
+                <div class="fragment">initializes a repo</div>
+            </section>
+            <section><pre><code>git clone</code></pre>
+                <div class="fragment">gets a repo from a repote resource cloning it locally</div>
+            </section>
+            <section><pre><code>git config</code></pre>
+                <div class="fragment">lists/sets config elements of a repo / globally</div>
+            </section>
+            <section>saving changes<pre><code class="js">git add
+git commit
+git push</code></pre>
+                <div class="fragment"><ul><li>adds a file(s) to staging area, </li><li>adds it to commit, </li><li>pushes to the remote</li></ul></div>
+                <pre class="fragment"><code class="js">// pro-tip: only on local feature branches
+git commit --amend  </code></pre>
+</section>
+        </section>
+
+
+        <section>
+            <section><h4>GIT checkout</h4>viewing an old revision (changing the branch)
+                <pre><code class="js">
+git log // git log --oneline  
+git checkout [name]    
+// git checkout -             
+                </code></pre>
+
+                <pre class="fragment"><code class="js">//example:
+git log --oneline
+git checkout a1e8fb5
+...
+git checkout main
+
+// creates a checkout from a starting point if branch not exist
+git checkout -b < branch_name>
+// resets branch to the starting point
+git checkout -B < branch_name>
+
+               </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section><h4>GIT stash</h4>temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on
+                </section>
+            <section>
+                <pre><code class="js">[modify a file]
+ git stash          // will put changes to the stash
+ // alternatively
+ git stash -u       // adds also untracked files
+
+ git stash pop      // pops the change out of shash         
+ git stash apply    // takes the changes from the stash leaving the stash 
+  </code></pre>
+            </section>
+
+            <section>
+                <pre><code class="js">git stash list
+ git stash save "descriptive label"
+ 
+ // git stash pop takes the most recent stash. 
+ // if you want to take the older one
+ git stash pop stash@{2}
+                </code></pre>
+            </section>
+
+            <section>
+                dropping the stash
+                <pre><code class="js">// single entry
+git stash drop stash@{1}
+
+// whole stash
+git stash clear                </code></pre>
+            </section>
+
+            <section data-background-color="rgb(150, 130, 205)">
+                <div>TASK:</div>
+                <div><ul>
+                    <li>modify index.css adding text color to everything</li>
+                    <li>add the changes to the stash</li>
+                    <li>read out from the stash using pop / apply</li>
+                    <li>add the changes to the stash once more but with a message</li>
+                    <li>get the stash again by its ID</li>
+                    <li>clear the stash completely</li>
+                    <li>commit the changes</li>
+                    </ul></div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h4>git status</h4>displays the state of the working directory and the staging area.
+                </section>
+            <section>
+                <pre><code class="js">git status</code></pre>
+                <img alt='' src="img/status1.png"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h4>git log</h4>displays committed snapshots. It lets you list the project history, filter it, and search for specific changes.
+            </section>
+            <section>
+                <pre><code class="js">git log</code></pre>
+                <img alt='' src="img/log.png"/>
+            </section>
+            <section>
+                <pre><code class="js">git log -n < limit>  //how many commmits
+git log --oneline   // short output
+git log --stat      // statistict about insertions / deletions
+                </code></pre>
+                <img alt='' src="img/stat.png"/>
+            </section>
+            <section>
+                <pre><code class="js">git log -p    // most detailed view
+git log --author="< pattern>" // search for author - regex works
+git log --grep="< pattern>" // search in commit messages
+                </code></pre>
+                <img width="500px" src="img/gitp.png"/>
+            </section>
+            <section>example:
+                <pre><code class="js">git log --author="John Smith" -n3 -p hello.py</code></pre>
+                This will display a full diff of all the changes John Smith has made to the file hello.py limiting view to 3 most recent commits from the result set
+            </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                TASK: show the detailed info about your last commit
+                <pre class="fragment"><code class="js">git log -p -n1</code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section><h4>GIT blame</h4>display of author metadata attached to specific committed lines in a file</section>
+            <section>another way to look for commit details
+                <pre><code class="js">git clone https://kevzettler@bitbucket.org/kevzettler/git-blame-example.git && cd git-blame-example</code></pre>
+                <pre class="fragment"><code class="js">git log</code></pre>
+                <pre class="fragment"><code class="js">git blame README.md // blame MUST have a parameter</code></pre>
+            </section>
+            <section>how to read blame<img alt='' src="img/blame.png"/></section>
+            <section>common options
+            <pre><code class="js">git blame -L 1,5 README.md    //line range
+git blame -e README.md  //email address instead of username
+git blame -w README.md  //ignores whitespaces
+            </code></pre></section>
+
+        </section>
+        <section>
+            <section><h4>collaborating</h4></section>
+            <section><h4>basic big picture</h4>
+                <img alt='' src="img/basicflow.png"/>
+            </section>
+            <section><h4>big picture with others</h4>
+                <img alt='' src="img/flow.png"/>
+            </section>
+        </section>
+
+        <section>
+            <section><h4>git remote</h4>
+                lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories. Instead of providing real-time access to another repository, they serve as convenient names that can be used to reference a not-so-convenient URL.
+            </section>
+            <section><pre><code class="js">
+git remote  // lists all the remotes
+git remote -v   // lists all the remotes with their URLs
+            </code></pre> </section>
+            <section>
+                <pre><code class="js">
+git remote add < name> < url>
+git remote rm < name>
+git remote rename < old-name> < new-name>
+                </code></pre>
+            </section>
+
+            <section data-background-color="rgb(150, 130, 205)"><ul>
+                <li>add new remote to your repository</li>
+                <li>show remote list</li>
+                <li>remove dummy remote</li>
+            </ul>
+            </section>
+        </section>
+
+        <section>
+            <section><h4>git fetch</h4>downloads commits, files, and refs from a remote repository into your local repo</section>
+            <section><pre><code class="js">// gets all branches (+ commmit & files) from EXPLICITLY stated upstream
+git fetch < remote>
+
+// same as above, but only for one branch
+git fetch < remote> < branch>
+
+// fetches all registered remotes and their branches
+git fetch --all
+            </code></pre></section>
+            <section>FETCH vs PULL
+            <div>git FETCH - the 'safe' version</div>
+            <div>git PULL - more aggressive alternative</div>
+                <br>
+                <div class="fragment">PULL will download the remote content for the active local branch and immediately execute git merge to create a merge commit for the new remote content. <br>If you have pending changes in progress this will cause conflicts and kick-off the merge conflict resolution flow.</div>
+            </section>
+
+            <section><h4>example</h4>
+<pre><code class="js">git fetch origin
+
+// optional - check what was changed
+git checkout main
+git log origin/main
+
+// merge to local main
+git merge origin/main
+    </code></pre>
+            </section>
+
+        </section>
+
+        <section>
+            <section><h4>git pull</h4> used to fetch and download content from a remote repository and immediately update the local repository to match that content.</section>
+            <section><div>common options</div>
+            <pre><code class="js">// the same as git fetch & git merge origin/< current-branch>
+git pull < remote>
+
+// the same as git fetch
+git pull --no-commit < remote>
+
+// fetch + different strategy for merge i.e. 'rebase'
+git pull --rebase < remote>            </code></pre>
+    the difference between merge & rebase lies in keeping the linear history of commits. <br>
+                The former keeps it, the latter does not.
+            </section>
+        </section>
+
+<section>
+    <section>
+        <h4>git commit</h4>
+        <pre><code class="js">// basic commit (unacceptable since no commit mesage)
+git commit
+
+// commit with a message
+git commit -m ""        
+
+// adding new commit to the previous one (it is changing the hash)
+commit --amend
+
+// if a commit was a mistake
+// creates another commit that reverts the changes
+git revert < commitId >
+
+// doing real 'undo' on a commit
+// numeric value indicates how many commits should be undone
+git reset HEAD~1
+
+</code></pre>
+    </section>
+</section>
+
+        <section>
+            <section><h4>git push</h4>used to upload local repository content to a remote repository<br> Pushing is how you transfer commits from your local repository to a remote repo</section>
+            <section>
+                <pre><code class="js">
+ // remote == upstream (defaults to origin),
+ // branch defaults to current branch
+ git push < remote> < branch>
+
+ // push all local branches
+ git push < remote> --all
+                </code></pre>
+            </section>
+
+            <section>examples:
+<pre><code class="js">// default git push
+git checkout main
+git fetch origin main
+git rebase -i origin/main
+
+// Squash commits, fix up commit messages etc.
+git push origin main
+</code></pre>
+
+<pre class="fragment"><code class="js">// Amended force push
+// make changes to a repo and git add
+git commit --amend
+
+// update the existing commit message
+git push --force origin main
+</code></pre>
+
+                <pre class="fragment"><code class="js">// deleting remote branch
+git branch -D branch_name
+git push origin :branch_name
+                </code></pre>
+            </section>
+        </section>
+
+        <section data-background-color="rgb(150, 130, 205)">
+            TASK: <ul>
+            <li>clone a repo git_exercises from https://github.com/jesiolowski-wsb/git_exercises using SSH</li>
+            <li>add a file [my_name].txt to the repo</li>
+            <li>sync your local repo with the remote</li>
+        </ul>
+            <pre class="fragment"><code class="js">
+git clone git@github.com:jesiolowski-wsb/git_exercises.git
+echo "test txt file" > file1.txt
+git add file2.txt
+git commit -m "file added"
+git push
+git pull
+            </code></pre>
+            </section>
+
+        <section>
+            <section><h4>branching</h4>effectively a pointer to a snapshot of your changes. When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new branch to encapsulate your changes</section>
+            <section>
+                <pre><code class="js">// synonyme to git branch --list
+git branch
+// creates without checkout
+git branch < branchName >
+
+// safe remove
+git branch -d < branchName >
+// forced remove
+git branch -D < branchName >
+// rename a branch
+git branch -m < branchName >
+
+// lists all remote branches
+git branch -a
+                </code></pre>
+            </section>
+            <section>
+<pre><code class="js">// removing remote branch
+git push origin --delete < branchName >
+git push origin :< branchName ></code></pre>
+            </section>
+            <section>The place in where the branch is created does matter! Creating a branch while being on a branch creates a branch from a branch :) </section>
+
+            <section data-background-color="rgb(150, 130, 205)">
+                TASK: <div>create a local branch with 1 image inside, push it to remote</div>
+                <pre class="fragment"><code class="js">git branch fj_test   // alternative: git checkout -b fj_test
+git checkout fj_test
+echo file_test >file.test.txt
+git add .
+git commit -am "test on a branch"
+git push  // should result with an error, why?
+                </code></pre>
+
+                <pre class="fragment"><code class="js">git push --set-upstream origin fj_test
+git push                </code></pre>
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h4>GIT MERGE</h4> lets you take the independent lines of development created by git branch and integrate them into a single branch.
+            </section>
+            <section>
+<pre><code class="js">// Start a new feature
+git checkout -b new-feature
+// Edit some files
+git add < file>
+git commit -m "Start a feature"
+// Edit some files
+git add < file>
+git commit -m "Finish a feature"
+// Merge in the new-feature branch
+git checkout main
+git merge new-feature
+git branch -d new-feature
+</code></pre>
+            </section>
+            <section data-background-color="rgb(150, 130, 205)">
+TASK: merge your own feature branch with main + remove your local feature branch
+                <pre class="fragment"><code class="js">
+git merge fj_test
+git push
+git branch -d fj_test
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section><h4>resolving conflicts</h4>If the two branches you're trying to merge both changed the same part of the same file, Git won't be able to figure out which version to use. When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually.</section>
+         <section data-background-color="rgb(150, 130, 205)">
+             task: <ul><li>modify a file on your local repo </li>
+             <li>modify the same file on a remote (github.com level) in a different manner</li>
+             <li>try to commit & push file from a local machine</li>
+         </ul>
+         </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <img width="700px" src="img/conflict0.png"/>
+            </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <img width="900px" src="img/conflict1.png"/>
+            </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <h4>resolving conflicts</h4>
+                <img width="700px" src="img/conflict2.png"/>
+                <div>the content before the ======= marker is the receiving branch and the part after is the merging branch.</div>
+            </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <img width="700px" src="img/conflict3.png"/>
+                <div>When you're ready to finish the merge, all you have to do is run git add on the conflicted file(s) to tell Git they're resolved. <br>Then, you run a normal git commit to generate the merge commit</div>
+            </section>
+            <section>
+                useful tools for merge conflicts
+                <pre><code class="js">// helps to identify conflicted files
+git status
+
+// list of commits that conflict between the merging branches.
+git log --merge
+
+// find differences between states of a repository/files
+// https://queirozf.com/entries/git-diff-reference-and-examples
+git diff</code></pre>
+            </section>
+
+            <section>when git fails to start a merge
+                <pre><code class="js">
+// can be used for undoing changes to files, or for changing branches
+git checkout
+
+// reset can be used to undo changes to the working directory and staging area.
+git reset --mixed
+                    
+                </code></pre></section>
+                <section>when git conflicts arise during a merge<pre><code class="js">
+// will exit from the merge process and return the branch to the state before the merge began
+git merge --abort
+
+// resets conflicted files to a know good state
+git reset
+                 </code></pre></section>
+
+
+        </section>
+
+<section data-background-color="rgb(150, 130, 205)">
+    <section><h4>Exercise 1:</h4>
+        Please enter <a href="https://git-school.github.io/visualizing-git/" target="_new">GIT visualizer</a> and recreate the the most common pattern used while working on a project i.e.
+        <ul>
+            <li>prepare MASTER and DEVELOP branch</li>
+            <li>while being on develop, create 'code import' commit (+ push to remote)</li>
+        </ul>
+    </section>
+    <section>
+        <ul>
+            <li>create 3 feature branches, commit and push to remote</li>
+            <li>merge all feature branches with develop</li>
+            <li>make a pull from remote</li>
+            <li>perform <strong>'git tag release1'</strong> </li>
+            <li>merge with master</li>
+            <li>push to remote</li>
+        </ul>
+    </section>
+        <section><h4>Exercise 2:</h4>
+        <ul>
+            <li>create a commit, then undo it using <strong>reset HEAD~1</strong></li>
+            <li>commit again, then <strong>revert</strong> last commit</li>
+            <li>create a commit, then <strong>--amend</strong> it </li>
+            <li>push</li>
+        </ul>
+        </section>
+        <section><h4>Exercise 3:</h4>
+        <ul>
+            <li>while on develop, create a feature branch</li>
+           <li>on this feature branch, create 3 commits</li>
+           <li>go back to develop, create 2 commits</li>
+           <li>go to feature branch again and perform <strong>git rebase develop</strong></li>
+        </ul>
+        <h5>what just happened?</h5>
+
+        </section>
+    </section>
+    <section>
+        <section><h4>git rebase</h4>Rebasing is the process of moving or combining a sequence of commits to a new base commit.</section>
+        <section>
+            <pre><code class="js">
+// Create a feature branch based off of main 
+git checkout -b feature_branch
+// Edit files 
+git commit -a -m "Adds new feature"     
+
+//rebase happening
+git rebase develop
+
+//but we're still on a feature branch
+git checkout develop
+git merge feature_branch     
+git push
+git branch -d feature_branch
+            </code></pre>
+        </section>
+    </section>
+</section>
+
+<section>
+        <section><h4>git rebase -i</h4>interactive way of editing past commits.</section>
+        <section>
+            <pre><code class="js">// identify the last "good" commit and provide its hash to the rebase command:
+git rebase -i 0ad14fa5
+
+// mark all the commits you want to change with the "edit" keyword
+// (Git will walk you through each commit)
+git commit --amend --author="John Doe < john@doe.org>" --no-edit
+git rebase --continue
+
+git push
+</code></pre>
+        </section>
+    </section>
+
+    <section>
+        <section><h4>cherry picking</h4> act of picking a commit from a branch and applying it to another</section>
+        <section><pre>
+a - b - c - d       Main
+     \
+      e - f - g     Feature</pre>
+
+      <br><small>Aim: to take commit f from feature branch and put it into Main</small>
+  </section>
+  <section><pre><code class="js">
+      git checkout -b feature branch
+      // touch file1.txt
+      // git add .
+      // git commit -m "adding txt file"
+
+      // touch file2.jpg
+      // git add .
+      // git commit -m "adding jpg file"
+
+      git log --oneline
+      git checkout develop
+
+      git cherry pick // < commit hash of a desired commit> < or commits>
+  </code></pre></section>
+  <section>git cherry pick wors like a rebase i.e creates a new commit out of a cherry picked commit</section>
+  <section><h4>no instant commit</h4>
+    <pre><code class="js">git cherry-pick < hash > -n</code></pre></section>
+
+    </section>
+
+        <section data-background-color="rgb(100, 120, 55)"><div>Resources</div><ul>
+            <li><a href="https://www.atlassian.com/git/tutorials" target="_new">GIT tutorial by atlassian</a></li>
+            <li><a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_new">GIT cheat cheet by atlassian</a></li>
+            <li><a href="https://git-school.github.io/visualizing-git/" target="_new">GIT visualizer</a></li>
+            <li><a href="https://learngitbranching.js.org/?locale=en" target="_new">git branching</a></li>
+        </ul></section>
+
+        <section data-background-color="rgb(101, 00, 25)">
+            <section><h4>bonus:</h4>
+            git flow</section>
+            <section><h4>what is git flow</h4> It's a wrapper around GIT. Needs separate installation. Is an extension to default git init and simply... creates branches</section>
+            <section><h4>what is git flow II</h4> a set of guidelines dev can follow when using version control. <br />A branching model</section>
+
+            <section><img alt='' src="img/git-model@2x.png" width="50%"></section>
+            <section><a href="https://github.com/nvie/gitflow/wiki/Installation" target="_new">installing git flow</a></section>
+            <section><h4>initialization</h4><pre><code class="js">mkdir gitflow
+cd gitflow
+git init
+
+// shows help page
+git flow
+
+// initializes gitflow structure
+git flow init
+            </code></pre></section>
+            <section><h4>'feature' path</h4><pre><code class="js">// check available branches
+git branch
+
+// shows help for a command
+git flow feature help
+// creates a feature
+git flow feature start REV1
+</code></pre></section>
+<section><h4>working with features</h4><pre><code class="js">// list all branches
+git branch
+// bear in mind a difference in naming the branch vs feature list view
+git flow feature list
+
+// add new file
+touch file1.txt
+git add .
+git commit -m "add txt file"
+
+git log --oneline
+</code></pre></section>
+<section><h4>differences in branches creation</h4><pre><code class="js">// note what happened - new feature is based on DEVELOP
+git flow feature start REV2
+
+// lets add something to the feature
+touch index.php
+git add .
+git commit -m "adding php script"
+git status
+git log --oneline
+</code></pre></section>
+
+<section><h4>finishing feature</h4><pre><code class="js">//check if state is clean
+git checkout develop
+git checkout feature/REV1
+
+// merge feature to develop and then remove feature branch
+// read 'summary of actions' section
+git flow feature finish
+
+git branch
+git flow feature list
+
+// nothing mentioned about the 'merge'
+git log
+</code></pre></section>
+<section><h4>finishing feature II</h4><pre><code class="js">git checkout feature/REV2
+// real merging is taking place
+git flow feature finish
+
+git status
+// git log --oneline
+git log --oneline --graph
+            </code></pre></section>
+
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>
