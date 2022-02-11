@@ -1,5 +1,4 @@
-=
-
+##GIT classes for WSB students
 materials for GIT classes created thanks to  [revealjs.com](https://revealjs.com). library
 
 based on: 
