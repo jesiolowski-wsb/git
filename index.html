@@ -82,6 +82,7 @@
                     <li>sprint planning</li>
                     <li>sprint refinement</li>
                     <li>sprint review / demo</li>
+                    <li>sprint retro</li>
                 </ul>
                 <br/><br/>
                 <ul class="fragment">
@@ -92,6 +93,19 @@
                     <li>backlog refinement</li>
                     <li>solutioning</li>
                 </ul>
+            </section>
+            <section>
+                <h4>SP, capacity, velocity, burndown</h4>
+                <img src="img/burndown.png"/>
+                <a href="https://www.planitpoker.com/">planit poker</a>
+            </section>
+            <section>
+                <h4>PR, CR</h4>
+                <img src="img/pr.png"/>
+            </section>
+            <section>
+                <h4>git signal words</h4>
+                <img src="img/gitsignal.png"/>
             </section>
         </SECTION>
         <section>
@@ -226,7 +240,10 @@ git config user.name "John Doe"
 git config user.email "john@doe.org"      
 // vs
 git config --global user.name "John Doe"
-git config --global user.email "john@doe.org"      
+git config --global user.email "john@doe.org"
+
+// multiple SSH keys env:
+git config core.sshcommand "ssh -i ~/.ssh/id_ed25519 -F /dev/null"
         </code></pre>
     </section>
 </section>
