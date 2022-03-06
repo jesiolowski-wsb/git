@@ -43,6 +43,7 @@
                 <p>(basically a HUGE WIP)</p>
                 <ul>
                     <li>what is GIT</li>
+                    <li>why / benefits</li>
                     <li>installing git</li>
                     <li>getting code from remote source</li>
                     <li>working with it</li>
@@ -220,6 +221,7 @@ commits history
     </section>
         <section>
     <section>
+        but how to make it visible for others?<br>
         <a target="_new" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"> adding SSH key to github </a>
     </section>
     <section>
@@ -232,6 +234,7 @@ git remote add origin [your path]
 git branch -M main // <-- optional (git branch --help)
 git push -u origin main </code></pre>
         <div class="fragment">'-u origin master' means set UPSTREAM reflecting local 'main' on origin (remote)</div>
+        <small>note: please use SSH for access - HTTPS should serve as a last resort option</small>
     </section>
     <section>
         <h4>WSB quirks</h4>
@@ -252,8 +255,9 @@ git config core.sshcommand "ssh -i ~/.ssh/id_ed25519 -F /dev/null"
                 TASK: create another commit and push it to remote
             </section>
             <section>
-        <pre><code>git add .
-git commit
+        <pre><code>// after modifying a file
+git add .
+git commit //optionally: -m "..."
 git push
         </code></pre>
             </section>
@@ -264,6 +268,10 @@ git commit -am "commit message"
 git push
         </code></pre>
             </section>
+            <section>
+                TASK: remove your repo from the disk, and then clone it from github
+            </section>
+
         </section>
 
         <section data-background-color="rgb(250, 230, 205)">
