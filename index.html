@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -24,7 +24,7 @@
                         class="giphy-embed" allowFullScreen></iframe>
             </section>
             <section>GIT can be either easy or hard</section>
-            <section><img height="650" src="https://imgs.xkcd.com/comics/git_2x.png"></section>
+            <section><img alt="" height="650" src="https://imgs.xkcd.com/comics/git_2x.png"></section>
             <section>ALL suggestions are appreciated since...</section>
             <section>...first times can be tricky<br>
                 <iframe src="https://giphy.com/embed/nG3S7sTfifKYU" width="377" height="480" frameBorder="0"
@@ -51,7 +51,7 @@
                 <div class="fragment"><br>...BUT FIRST</div>
             </section>
 
-            <section><h4>...SYLLABUS</h4><img src="img/syllabus.webp"/> </section>
+            <section><h4>...SYLLABUS</h4><img alt="" src="img/syllabus.webp"/> </section>
         </SECTION>
         <SECTION>
             <section> <div>down to earth AGILE approach:<br><br>How to track bugs?</div> <ul class="fragment">
@@ -61,20 +61,20 @@
                 <li><a href="https://gitlab.com/">Gitlab  </a>(?)</li>
             </ul></section>
             <section>but wait, A... what?
-                <img src="img/a-w1.jpg" />
+                <img alt="" src="img/a-w1.jpg" />
             </section>
             <section>
-                <img src="img/a-w2.jpg"/>
+                <img alt="" src="img/a-w2.jpg"/>
             </section>
         </SECTION>
         <SECTION>
             <section>
                 <h4>agile intro</h4>
-                <img src="img/agileboard.png" />
+                <img alt="" src="img/agileboard.png" />
             </section>
             <section>
                 <h4>epic -> feature -> story</h4>
-                <img src="img/epic.png" />
+                <img alt="" src="img/epic.png" />
             </section>
             <section>
                 <h4>scrum events</h4>
@@ -97,16 +97,16 @@
             </section>
             <section>
                 <h4>SP, capacity, velocity, burndown</h4>
-                <img src="img/burndown.png"/>
+                <img alt="" src="img/burndown.png"/>
                 <a href="https://www.planitpoker.com/">planit poker</a>
             </section>
             <section>
                 <h4>PR, CR</h4>
-                <img src="img/pr.png"/>
+                <img alt="" src="img/pr.png"/>
             </section>
             <section>
                 <h4>git signal words</h4>
-                <img src="img/gitsignal.png"/>
+                <img alt="" src="img/gitsignal.png"/>
             </section>
         </SECTION>
         <section>
@@ -394,7 +394,7 @@ git log --stat      // statistict about insertions / deletions
 git log --author="< pattern>" // search for author - regex works
 git log --grep="< pattern>" // search in commit messages
                 </code></pre>
-                <img width="500px" src="img/gitp.png"/>
+                <img alt="" width="500px" src="img/gitp.png"/>
             </section>
             <section>example:
                 <pre><code class="js">git log --author="John Smith" -n3 -p hello.py</code></pre>
@@ -431,7 +431,7 @@ git blame -w README.md  //ignores whitespaces
                 <ul>
                     <li>work in pairs</li>
                     <li>Person A: create a repo, share the URL with Person B</li>
-                    <li>person B: get the repo and try to push change to it</li>
+                    <li>person B: get the repo and try to push change to it <small>(remember the order - first commit, then push)</small></li>
                     <li>solve the problem by working together :D </li>
                     <li>switch roles (Person A <===> Person B)</li>
                 </ul>
@@ -459,7 +459,7 @@ git remote rename < old-name> < new-name>
 
             <section>
                 <div>see the reasoning now?</div>
-                <img src="img/gitremoteexpl.png" />
+                <img alt="" src="img/gitremoteexpl.png" />
             </section>
 
             <section data-background-color="rgb(150, 130, 205)"><ul>
@@ -539,6 +539,11 @@ git revert < commitId >
 git reset HEAD~1
 
 </code></pre>
+    </section>
+    <section data-background-color="rgb(150, 130, 205)" >
+        <h4>TASK</h4>
+        <div>create a commit (or two) and: </div><ul><li>revert it</li><li>undo (reset) it</li></ul>
+        <br><br><div>(note: using <a href="https://git-school.github.io/visualizing-git/#free-remote"> git visualiser</a> might be more apparent for what's happening)</div>
     </section>
 </section>
 
@@ -635,8 +640,23 @@ git push  // should result with an error, why?
                 <pre class="fragment"><code class="js">git push --set-upstream origin fj_test
 git push                </code></pre>
             </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <h4>TASK:</h4>
+                <div>work in pairs</div>
+                <ul>
+                    <li>Person A: get to the repo of Person B, create a local branch, put a change to it and push to the remote.</li>
+                    <small>Ideally, you should create a remote branch on Person's B repo.</small>
+                    <li>Ask for a code review creating a pull request <small>(github.com level)</small></li>
+                    <li>switch roles</li>
+                </ul>
+            </section>
 
-        </section>
+            <section data-background-color="rgb(150, 130, 205)">
+                <h4>task</h4>
+                do the same as before (branch, commit and push), but using an IDE of your choice
+            </section>
+
+            </section>
         <section>
             <section>
                 <h4>GIT MERGE</h4> lets you take the independent lines of development created by git branch and integrate them into a single branch.
@@ -674,18 +694,18 @@ git branch -d fj_test
          </ul>
          </section>
             <section data-background-color="rgb(150, 130, 205)">
-                <img width="700px" src="img/conflict0.png"/>
+                <img alt="" width="700px" src="img/conflict0.png"/>
             </section>
             <section data-background-color="rgb(150, 130, 205)">
-                <img width="900px" src="img/conflict1.png"/>
+                <img alt="" width="900px" src="img/conflict1.png"/>
             </section>
             <section data-background-color="rgb(150, 130, 205)">
                 <h4>resolving conflicts</h4>
-                <img width="700px" src="img/conflict2.png"/>
+                <img alt="" width="700px" src="img/conflict2.png"/>
                 <div>the content before the ======= marker is the receiving branch and the part after is the merging branch.</div>
             </section>
             <section data-background-color="rgb(150, 130, 205)">
-                <img width="700px" src="img/conflict3.png"/>
+                <img alt="" width="700px" src="img/conflict3.png"/>
                 <div>When you're ready to finish the merge, all you have to do is run git add on the conflicted file(s) to tell Git they're resolved. <br>Then, you run a normal git commit to generate the merge commit</div>
             </section>
             <section>
