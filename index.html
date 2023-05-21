@@ -73,6 +73,13 @@
                 <img alt="" src="img/agileboard.png" />
             </section>
             <section>
+                <div>basic links:</div>
+                <ul>
+                    <li><a target="_new" href="https://scrumguides.org/scrum-guide.html">scrum guide</a></li>
+                    <li><a target="_new" href="https://www.scaledagileframework.com/">SAFe</a></li>
+                </ul>
+            </section>
+            <section>
                 <h4>epic -> feature -> story</h4>
                 <img alt="" src="img/epic.png" />
             </section>
@@ -109,6 +116,24 @@
                 <img alt="" src="img/gitsignal.png"/>
             </section>
         </SECTION>
+        <section>
+            <section><h4>DEV team:</h4>
+            <ul>
+                <li>Scrum master</li>
+                <li>Product owner (!PM)</li>
+                <li>testers (QA)</li>
+                <li>designers</li>
+                <li>developers (FE, BE etc)</li>
+            </ul><br><br>
+                <div class="fragment">one role <strong>must not</strong> have the responsibilities of more than one role </div>
+            </section>
+            <section>
+                <div>Wait, where's devops?</div>
+            </section>
+            <section>
+                <div>CoP</div>
+            </section>
+        </section>
         <section>
             <section>
                 <p>Q: What is GIT?</p>
@@ -590,11 +615,11 @@ git push origin :branch_name
             <li>clone a repo git_exercises from https://github.com/jesiolowski-wsb/git_exercises using SSH</li>
             <li>add a file [my_name].txt to the repo</li>
             <li>sync your local repo with the remote</li>
-        </ul>
-            <pre class="fragment"><code class="js">
-git clone git@github.com:jesiolowski-wsb/git_exercises.git
+        </ul><br><br>
+            <small>what is required to achieve this goal?</small>
+            <pre class="fragment"><code class="js">git clone git@github.com:jesiolowski-wsb/git_exercises.git
 echo "test txt file" > file1.txt
-git add file2.txt
+git add file1.txt
 git commit -m "file added"
 git push
 git pull
@@ -627,11 +652,16 @@ git push origin :< branchName ></code></pre>
             </section>
             <section>The place in where the branch is created does matter! Creating a branch while being on a branch creates a branch from a branch :) </section>
 
+            <section>
+                <h4>pull request</h4>
+                lets you tell others about changes you've pushed to a branch in a repository (...) you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch (<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">docs</a>)
+            </section>
+
             <section data-background-color="rgb(150, 130, 205)">
                 TASK: <div>create a local branch with 1 image inside, push it to remote</div>
                 <pre class="fragment"><code class="js">git branch fj_test   // alternative: git checkout -b fj_test
 git checkout fj_test
-echo file_test >file.test.txt
+echo "file_test" >file.test.txt
 git add .
 git commit -am "test on a branch"
 git push  // should result with an error, why?
